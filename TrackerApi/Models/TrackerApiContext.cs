@@ -1,9 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+using TrackerApi.Models;
 
 namespace TrackerApi.Models;
 public class TrackerApiContext : DbContext
 {
   public DbSet<Student> Students { get; set; }
+  public DbSet<Coach> Coaches { get; set; }
+  public DbSet<Promotion> Promotions { get; set; }
 
   public TrackerApiContext(DbContextOptions<TrackerApiContext> options)
     : base(options)
@@ -20,6 +23,8 @@ public class TrackerApiContext : DbContext
         new Student { StudentId = 4, FirstN = "Samurai", LastN = "Jack", Adult = false, Email = "SamuraiJack@email.com", BeltId = 20, DateEnrolled = new DateOnly(2019,5,10) }
      );
   }
+
+  public DbSet<TrackerApi.Models.Coach> Coach { get; set; }
 }
   
 

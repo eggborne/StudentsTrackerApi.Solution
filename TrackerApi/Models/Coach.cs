@@ -20,5 +20,7 @@ namespace TrackerApi.Models
 
     [Required]
     public string BeltId { get; set;}
+
+    public List<Promotion> Promotions { get; }
   }
 }

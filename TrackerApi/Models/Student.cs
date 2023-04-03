@@ -23,5 +23,7 @@ namespace TrackerApi.Models
 
     [Required]
     public DateOnly DateEnrolled { get; set; }
+
+    public List<Promotion> Promotions { get; set; }
   }
 }
