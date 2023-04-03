@@ -8,11 +8,11 @@ namespace TrackerApi.Models
     public int PromotionId { get; set; }
     
     [Required(ErrorMessage = "Please add a Student ID!")]
-    public string StudentId { get; set; }
+    public int StudentId { get; set; }
     public Student Student { get; set; }
     
     [Required(ErrorMessage = "Please add a Coach ID!")]
-    public string CoachId { get; set; }
+    public int CoachId { get; set; }
     public Coach Coach { get; set; }
 
     public DateOnly PromotionDate { get; set; }
