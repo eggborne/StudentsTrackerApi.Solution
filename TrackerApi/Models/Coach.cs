@@ -19,7 +19,7 @@ namespace TrackerApi.Models
     public string Phone { get; set; }
 
     [Required]
-    public string BeltId { get; set;}
+    public int BeltId { get; set;}
 
     public List<Promotion> Promotions { get; }
   }

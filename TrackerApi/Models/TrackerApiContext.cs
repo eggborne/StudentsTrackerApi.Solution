@@ -22,9 +22,13 @@ public class TrackerApiContext : DbContext
         new Student { StudentId = 3, FirstN = "Johnny", LastN = "Bravo", Adult = false, Email = "JohnnyBravo@email.com", BeltId = 13, DateEnrolled = new DateOnly(2021,10,20) },
         new Student { StudentId = 4, FirstN = "Samurai", LastN = "Jack", Adult = false, Email = "SamuraiJack@email.com", BeltId = 20, DateEnrolled = new DateOnly(2019,5,10) }
      );
+    builder.Entity<Coach>()
+    .HasData(
+      new Coach { CoachId = 1, FirstN = "Jimmy", LastN = "Coacher", Email = "JimmyCoacher@email.com", Phone = "555-555-5555", BeltId = 15 },  
+      new Coach { CoachId = 2, FirstN = "Sally", LastN = "Awesome", Email = "SallyAwesome@email.com", Phone = "555-555-5555", BeltId = 10 },
+      new Coach { CoachId = 3, FirstN = "Sue", LastN = "Sensei", Email = "SueSensei@email.com", Phone = "555-555-5555", BeltId = 8 }
+    );
   }
-
-  public DbSet<TrackerApi.Models.Coach> Coach { get; set; }
 }
   
 

@@ -24,14 +24,14 @@ namespace TrackerApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Coach>>> GetCoach()
         {
-            return await _context.Coach.ToListAsync();
+            return await _context.Coaches.ToListAsync();
         }
 
         // GET: api/Coaches/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Coach>> GetCoach(int id)
         {
-            var coach = await _context.Coach.FindAsync(id);
+            var coach = await _context.Coaches.FindAsync(id);
 
             if (coach == null)
             {
@@ -77,7 +77,7 @@ namespace TrackerApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Coach>> PostCoach(Coach coach)
         {
-            _context.Coach.Add(coach);
+            _context.Coaches.Add(coach);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetCoach", new { id = coach.CoachId }, coach);
@@ -87,13 +87,13 @@ namespace TrackerApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCoach(int id)
         {
-            var coach = await _context.Coach.FindAsync(id);
+            var coach = await _context.Coaches.FindAsync(id);
             if (coach == null)
             {
                 return NotFound();
             }
 
-            _context.Coach.Remove(coach);
+            _context.Coaches.Remove(coach);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -101,7 +101,7 @@ namespace TrackerApi.Controllers
 
         private bool CoachExists(int id)
         {
-            return _context.Coach.Any(e => e.CoachId == id);
+            return _context.Coaches.Any(e => e.CoachId == id);
         }
     }
 }

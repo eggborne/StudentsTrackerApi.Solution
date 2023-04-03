@@ -17,6 +17,6 @@ namespace TrackerApi.Models
 
     public DateOnly PromotionDate { get; set; }
 
-    public List<Promotion> Promotions { get; }
+    // public List<Promotion> Promotions { get; }
   }
 }
