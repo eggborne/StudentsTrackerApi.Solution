@@ -7,15 +7,15 @@ namespace TrackerApi.Models
   {
     public int PromotionId { get; set; }
     
-    [Required(ErrorMessage = "Please add a Student ID!")]
+    // [Required(ErrorMessage = "Please add a Student ID!")]
     public int StudentId { get; set; }
     public Student Student { get; set; }
     
-    [Required(ErrorMessage = "Please add a Coach ID!")]
+    // [Required(ErrorMessage = "Please add a Coach ID!")]
     public int CoachId { get; set; }
     public Coach Coach { get; set; }
-
-    public DateOnly PromotionDate { get; set; }
+// 
+    public DateTime PromotionDate { get; set; }
 
     // public List<Promotion> Promotions { get; }
   }

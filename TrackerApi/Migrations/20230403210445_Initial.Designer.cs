@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TrackerApi.Models;
 
@@ -10,9 +11,11 @@ using TrackerApi.Models;
 namespace TrackerApi.Migrations
 {
     [DbContext(typeof(TrackerApiContext))]
-    partial class TrackerApiContextModelSnapshot : ModelSnapshot
+    [Migration("20230403210445_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -132,7 +135,7 @@ namespace TrackerApi.Migrations
                             StudentId = 1,
                             Adult = false,
                             BeltId = 1,
-                            DateEnrolled = new DateTime(2023, 4, 3, 14, 11, 8, 594, DateTimeKind.Local).AddTicks(2530),
+                            DateEnrolled = new DateTime(2023, 4, 3, 14, 4, 45, 53, DateTimeKind.Local).AddTicks(8700),
                             Email = "JohnDoe@email.com",
                             FirstN = "John",
                             LastN = "Doe"
@@ -142,7 +145,7 @@ namespace TrackerApi.Migrations
                             StudentId = 2,
                             Adult = false,
                             BeltId = 2,
-                            DateEnrolled = new DateTime(2023, 4, 3, 14, 11, 8, 594, DateTimeKind.Local).AddTicks(2570),
+                            DateEnrolled = new DateTime(2023, 4, 3, 14, 4, 45, 53, DateTimeKind.Local).AddTicks(8750),
                             Email = "JaneDoe@email.com",
                             FirstN = "Jane",
                             LastN = "Doe"
@@ -152,7 +155,7 @@ namespace TrackerApi.Migrations
                             StudentId = 3,
                             Adult = false,
                             BeltId = 13,
-                            DateEnrolled = new DateTime(2023, 4, 3, 14, 11, 8, 594, DateTimeKind.Local).AddTicks(2580),
+                            DateEnrolled = new DateTime(2023, 4, 3, 14, 4, 45, 53, DateTimeKind.Local).AddTicks(8750),
                             Email = "JohnnyBravo@email.com",
                             FirstN = "Johnny",
                             LastN = "Bravo"
@@ -162,7 +165,7 @@ namespace TrackerApi.Migrations
                             StudentId = 4,
                             Adult = false,
                             BeltId = 20,
-                            DateEnrolled = new DateTime(2023, 4, 3, 14, 11, 8, 594, DateTimeKind.Local).AddTicks(2580),
+                            DateEnrolled = new DateTime(2023, 4, 3, 14, 4, 45, 53, DateTimeKind.Local).AddTicks(8750),
                             Email = "SamuraiJack@email.com",
                             FirstN = "Samurai",
                             LastN = "Jack"

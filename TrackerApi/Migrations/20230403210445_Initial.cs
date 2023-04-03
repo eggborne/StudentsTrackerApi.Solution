@@ -23,13 +23,13 @@ namespace TrackerApi.Migrations
                 {
                     CoachId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    FirstN = table.Column<string>(type: "longtext", nullable: false)
+                    FirstN = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    LastN = table.Column<string>(type: "longtext", nullable: false)
+                    LastN = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Email = table.Column<string>(type: "longtext", nullable: false)
+                    Email = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Phone = table.Column<string>(type: "longtext", nullable: false)
+                    Phone = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     BeltId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -45,15 +45,15 @@ namespace TrackerApi.Migrations
                 {
                     StudentId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    FirstN = table.Column<string>(type: "longtext", nullable: false)
+                    FirstN = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    LastN = table.Column<string>(type: "longtext", nullable: false)
+                    LastN = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Adult = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    Email = table.Column<string>(type: "longtext", nullable: false)
+                    Email = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     BeltId = table.Column<int>(type: "int", nullable: false),
-                    DateEnrolled = table.Column<DateOnly>(type: "date", nullable: false)
+                    DateEnrolled = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -69,7 +69,7 @@ namespace TrackerApi.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     StudentId = table.Column<int>(type: "int", nullable: false),
                     CoachId = table.Column<int>(type: "int", nullable: false),
-                    PromotionDate = table.Column<DateOnly>(type: "date", nullable: false)
+                    PromotionDate = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -104,10 +104,10 @@ namespace TrackerApi.Migrations
                 columns: new[] { "StudentId", "Adult", "BeltId", "DateEnrolled", "Email", "FirstN", "LastN" },
                 values: new object[,]
                 {
-                    { 1, false, 1, new DateOnly(2023, 4, 3), "JohnDoe@email.com", "John", "Doe" },
-                    { 2, false, 2, new DateOnly(2023, 4, 3), "JaneDoe@email.com", "Jane", "Doe" },
-                    { 3, false, 13, new DateOnly(2021, 10, 20), "JohnnyBravo@email.com", "Johnny", "Bravo" },
-                    { 4, false, 20, new DateOnly(2019, 5, 10), "SamuraiJack@email.com", "Samurai", "Jack" }
+                    { 1, false, 1, new DateTime(2023, 4, 3, 14, 4, 45, 53, DateTimeKind.Local).AddTicks(8700), "JohnDoe@email.com", "John", "Doe" },
+                    { 2, false, 2, new DateTime(2023, 4, 3, 14, 4, 45, 53, DateTimeKind.Local).AddTicks(8750), "JaneDoe@email.com", "Jane", "Doe" },
+                    { 3, false, 13, new DateTime(2023, 4, 3, 14, 4, 45, 53, DateTimeKind.Local).AddTicks(8750), "JohnnyBravo@email.com", "Johnny", "Bravo" },
+                    { 4, false, 20, new DateTime(2023, 4, 3, 14, 4, 45, 53, DateTimeKind.Local).AddTicks(8750), "SamuraiJack@email.com", "Samurai", "Jack" }
                 });
 
             migrationBuilder.CreateIndex(

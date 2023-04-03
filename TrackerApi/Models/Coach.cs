@@ -6,19 +6,19 @@ namespace TrackerApi.Models
   {
     public int CoachId { get; set; }
 
-    [Required]
+    // [Required]
     public string FirstN { get; set; }
 
-    [Required]
+    // [Required]
     public string LastN { get; set; }
 
-    [Required]
+    // [Required]
     public string Email { get; set; }
 
-    [Required]
+    // [Required]
     public string Phone { get; set; }
 
-    [Required]
+    // [Required]
     public int BeltId { get; set;}
 
     public List<Promotion> Promotions { get; }

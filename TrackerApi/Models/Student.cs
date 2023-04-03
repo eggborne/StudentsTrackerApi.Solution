@@ -6,24 +6,24 @@ namespace TrackerApi.Models
   {
     public int StudentId { get; set; }
 
-    [Required]
+    // [Required]
     public string FirstN { get; set; }
 
-    [Required]
+    // [Required]
     public string LastN { get; set; }
 
-    [Required]
+    // [Required]
     public bool Adult { get; set; }
 
-    [Required]
+    // [Required]
     public string Email { get; set; }
 
-    [Required]
+    // [Required]
     public int BeltId { get; set; }
 
-    [Required]
-    public DateOnly DateEnrolled { get; set; }
+    // [Required]
+    public DateTime DateEnrolled { get; set; }
 
-    public List<Promotion> Promotions { get; set; }
+    public List<Promotion> Promotions { get; }
   }
 }

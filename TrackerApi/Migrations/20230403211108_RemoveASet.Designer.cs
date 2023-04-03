@@ -11,8 +11,8 @@ using TrackerApi.Models;
 namespace TrackerApi.Migrations
 {
     [DbContext(typeof(TrackerApiContext))]
-    [Migration("20230403202720_Initial")]
-    partial class Initial
+    [Migration("20230403211108_RemoveASet")]
+    partial class RemoveASet
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,19 +32,15 @@ namespace TrackerApi.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("FirstN")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("LastN")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Phone")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("CoachId");
@@ -90,8 +86,8 @@ namespace TrackerApi.Migrations
                     b.Property<int>("CoachId")
                         .HasColumnType("int");
 
-                    b.Property<DateOnly>("PromotionDate")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("PromotionDate")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<int>("StudentId")
                         .HasColumnType("int");
@@ -117,19 +113,16 @@ namespace TrackerApi.Migrations
                     b.Property<int>("BeltId")
                         .HasColumnType("int");
 
-                    b.Property<DateOnly>("DateEnrolled")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("DateEnrolled")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("FirstN")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("LastN")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("StudentId");
@@ -142,7 +135,7 @@ namespace TrackerApi.Migrations
                             StudentId = 1,
                             Adult = false,
                             BeltId = 1,
-                            DateEnrolled = new DateOnly(2023, 4, 3),
+                            DateEnrolled = new DateTime(2023, 4, 3, 14, 11, 8, 594, DateTimeKind.Local).AddTicks(2530),
                             Email = "JohnDoe@email.com",
                             FirstN = "John",
                             LastN = "Doe"
@@ -152,7 +145,7 @@ namespace TrackerApi.Migrations
                             StudentId = 2,
                             Adult = false,
                             BeltId = 2,
-                            DateEnrolled = new DateOnly(2023, 4, 3),
+                            DateEnrolled = new DateTime(2023, 4, 3, 14, 11, 8, 594, DateTimeKind.Local).AddTicks(2570),
                             Email = "JaneDoe@email.com",
                             FirstN = "Jane",
                             LastN = "Doe"
@@ -162,7 +155,7 @@ namespace TrackerApi.Migrations
                             StudentId = 3,
                             Adult = false,
                             BeltId = 13,
-                            DateEnrolled = new DateOnly(2021, 10, 20),
+                            DateEnrolled = new DateTime(2023, 4, 3, 14, 11, 8, 594, DateTimeKind.Local).AddTicks(2580),
                             Email = "JohnnyBravo@email.com",
                             FirstN = "Johnny",
                             LastN = "Bravo"
@@ -172,7 +165,7 @@ namespace TrackerApi.Migrations
                             StudentId = 4,
                             Adult = false,
                             BeltId = 20,
-                            DateEnrolled = new DateOnly(2019, 5, 10),
+                            DateEnrolled = new DateTime(2023, 4, 3, 14, 11, 8, 594, DateTimeKind.Local).AddTicks(2580),
                             Email = "SamuraiJack@email.com",
                             FirstN = "Samurai",
                             LastN = "Jack"
