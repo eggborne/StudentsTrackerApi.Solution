@@ -13,9 +13,6 @@ namespace TrackerApi.Models
     public string LastN { get; set; }
 
     // [Required]
-    public bool Adult { get; set; }
-
-    // [Required]
     public string Email { get; set; }
 
     // [Required]

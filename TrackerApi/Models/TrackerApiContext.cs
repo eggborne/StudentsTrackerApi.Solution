@@ -17,10 +17,10 @@ public class TrackerApiContext : DbContext
   {
      builder.Entity<Student>()
      .HasData(
-        new Student { StudentId = 1, FirstN = "John", LastN = "Doe", Adult = false, Email = "JohnDoe@email.com", BeltId = 1, DateEnrolled = DateTime.Now }, // "2023-04-03T00:00:00"
-        new Student { StudentId = 2, FirstN = "Jane", LastN = "Doe", Adult = false, Email = "JaneDoe@email.com", BeltId = 2, DateEnrolled = DateTime.Now },
-        new Student { StudentId = 3, FirstN = "Johnny", LastN = "Bravo", Adult = false, Email = "JohnnyBravo@email.com", BeltId = 13, DateEnrolled = DateTime.Now },
-        new Student { StudentId = 4, FirstN = "Samurai", LastN = "Jack", Adult = false, Email = "SamuraiJack@email.com", BeltId = 20, DateEnrolled = DateTime.Now}
+        new Student { StudentId = 1, FirstN = "John", LastN = "Doe", Email = "JohnDoe@email.com", BeltId = 1, DateEnrolled = DateTime.Now }, // "2023-04-03T00:00:00"
+        new Student { StudentId = 2, FirstN = "Jane", LastN = "Doe", Email = "JaneDoe@email.com", BeltId = 2, DateEnrolled = DateTime.Now },
+        new Student { StudentId = 3, FirstN = "Johnny", LastN = "Bravo", Email = "JohnnyBravo@email.com", BeltId = 13, DateEnrolled = DateTime.Now },
+        new Student { StudentId = 4, FirstN = "Samurai", LastN = "Jack", Email = "SamuraiJack@email.com", BeltId = 20, DateEnrolled = DateTime.Now}
      );
     builder.Entity<Coach>()
     .HasData(
