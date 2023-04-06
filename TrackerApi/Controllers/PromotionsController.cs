@@ -42,15 +42,15 @@ namespace TrackerApi.Controllers
 
         // [Route("/api/promotions/create")]
         [HttpPost]
-        public async Task<ActionResult<Promotion>> CreatePromotion(Student student, int coachId, DateTime promotionDate)
+        public async Task<ActionResult<Promotion>> CreatePromotion(Promotion promotion)
         {
             // #nullable enable
             // Promotion? promotion = _context.Promotions.FirstOrDefault(join => (join.PromotionId == coachId && join.StudentId == student.StudentId));
             // #nullable disable
             // if (promotion == null)
             // {
-                _context.Promotions.Add(new Promotion() { StudentId = student.StudentId, PromotionId = coachId, PromotionDate = promotionDate });
-                _context.SaveChanges();
+                _context.Promotions.Add(promotion);
+                await _context.SaveChangesAsync();
                 List<Promotion> promotionsList = await _context.Promotions.ToListAsync();
                 Promotion mostRecentPromotion = promotionsList.Last();
             // }

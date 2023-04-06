@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TrackerApi.Models;
 
@@ -10,9 +11,11 @@ using TrackerApi.Models;
 namespace TrackerApi.Migrations
 {
     [DbContext(typeof(TrackerApiContext))]
-    partial class TrackerApiContextModelSnapshot : ModelSnapshot
+    [Migration("20230406190253_Something")]
+    partial class Something
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -128,7 +131,7 @@ namespace TrackerApi.Migrations
                         {
                             StudentId = 1,
                             BeltId = 1,
-                            DateEnrolled = new DateTime(2023, 4, 6, 12, 5, 3, 536, DateTimeKind.Local).AddTicks(9370),
+                            DateEnrolled = new DateTime(2023, 4, 6, 12, 2, 53, 582, DateTimeKind.Local).AddTicks(3200),
                             Email = "JohnDoe@email.com",
                             FirstN = "John",
                             LastN = "Doe"
@@ -137,7 +140,7 @@ namespace TrackerApi.Migrations
                         {
                             StudentId = 2,
                             BeltId = 2,
-                            DateEnrolled = new DateTime(2023, 4, 6, 12, 5, 3, 536, DateTimeKind.Local).AddTicks(9400),
+                            DateEnrolled = new DateTime(2023, 4, 6, 12, 2, 53, 582, DateTimeKind.Local).AddTicks(3220),
                             Email = "JaneDoe@email.com",
                             FirstN = "Jane",
                             LastN = "Doe"
@@ -146,7 +149,7 @@ namespace TrackerApi.Migrations
                         {
                             StudentId = 3,
                             BeltId = 13,
-                            DateEnrolled = new DateTime(2023, 4, 6, 12, 5, 3, 536, DateTimeKind.Local).AddTicks(9400),
+                            DateEnrolled = new DateTime(2023, 4, 6, 12, 2, 53, 582, DateTimeKind.Local).AddTicks(3230),
                             Email = "JohnnyBravo@email.com",
                             FirstN = "Johnny",
                             LastN = "Bravo"
@@ -155,7 +158,7 @@ namespace TrackerApi.Migrations
                         {
                             StudentId = 4,
                             BeltId = 20,
-                            DateEnrolled = new DateTime(2023, 4, 6, 12, 5, 3, 536, DateTimeKind.Local).AddTicks(9400),
+                            DateEnrolled = new DateTime(2023, 4, 6, 12, 2, 53, 582, DateTimeKind.Local).AddTicks(3230),
                             Email = "SamuraiJack@email.com",
                             FirstN = "Samurai",
                             LastN = "Jack"
@@ -164,17 +167,21 @@ namespace TrackerApi.Migrations
 
             modelBuilder.Entity("TrackerApi.Models.Promotion", b =>
                 {
-                    b.HasOne("TrackerApi.Models.Coach", null)
+                    b.HasOne("TrackerApi.Models.Coach", "Coach")
                         .WithMany("Promotions")
                         .HasForeignKey("CoachId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TrackerApi.Models.Student", null)
+                    b.HasOne("TrackerApi.Models.Student", "Student")
                         .WithMany("Promotions")
                         .HasForeignKey("StudentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Coach");
+
+                    b.Navigation("Student");
                 });
 
             modelBuilder.Entity("TrackerApi.Models.Coach", b =>

@@ -9,11 +9,10 @@ namespace TrackerApi.Models
     
     // [Required(ErrorMessage = "Please add a Student ID!")]
     public int StudentId { get; set; }
-    public Student Student { get; set; }
     
     // [Required(ErrorMessage = "Please add a Coach ID!")]
     public int CoachId { get; set; }
-    public Coach Coach { get; set; }
+
 // 
     public DateTime PromotionDate { get; set; }
 
