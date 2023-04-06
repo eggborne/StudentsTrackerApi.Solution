@@ -99,12 +99,12 @@ namespace TrackerApi.Controllers
             return NoContent();
         }
 
-        [Route("/api/promotions")]
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Promotion>>> GetPromotions()
-        {
-            return await _context.Promotion.ToListAsync();
-        }
+        // [Route("/api/promotions")]
+        // [HttpGet]
+        // public async Task<ActionResult<IEnumerable<Promotion>>> GetPromotions()
+        // {
+        //     return await _context.Promotion.ToListAsync();
+        // }
 
         [Route("/api/promotions/{id}")]
         [HttpGet]
@@ -120,26 +120,26 @@ namespace TrackerApi.Controllers
             return promotion;
         }
 
-        [Route("/api/promotions/create")]
+//         [Route("/api/promotions/create")]
 
-        [HttpPost]
-        public ActionResult CreatePromotion(Student student, int coachId, DateTime promotionDate)
-        {
-            // #nullable enable
-            // Promotion? promotion = _context.Promotions.FirstOrDefault(join => (join.CoachId == coachId && join.StudentId == student.StudentId));
-            // #nullable disable
-            // if (promotion == null)
-            // {
-                _context.Promotions.Add(new Promotion() { StudentId = student.StudentId, CoachId = coachId, PromotionDate = promotionDate });
-                _context.SaveChanges();
-                Promotion mostRecentPromotion = _context.Promotions.ToListAsync().Last();
-            // }
+//         [HttpPost]
+//         public ActionResult CreatePromotion(Student student, int coachId, DateTime promotionDate)
+//         {
+//             // #nullable enable
+//             // Promotion? promotion = _context.Promotions.FirstOrDefault(join => (join.CoachId == coachId && join.StudentId == student.StudentId));
+//             // #nullable disable
+//             // if (promotion == null)
+//             // {
+//                 _context.Promotions.Add(new Promotion() { StudentId = student.StudentId, CoachId = coachId, PromotionDate = promotionDate });
+//                 _context.SaveChanges();
+//                 Promotion mostRecentPromotion = _context.Promotions.ToListAsync().Last();
+//             // }
 
-//             rocking baby to sleep
-            // i listening
-            // does  api build ok ?
-            return CreatedAtAction("GetPromotion", new { id = mostRecentPromotion.PromotionId }, mostRecentPromotion);
-        }
+// //             rocking baby to sleep
+//             // i listening
+//             // does  api build ok ?
+//             return CreatedAtAction("GetPromotion", new { id = mostRecentPromotion.PromotionId }, mostRecentPromotion);
+//         }
 
 
         private bool StudentExists(int id)
