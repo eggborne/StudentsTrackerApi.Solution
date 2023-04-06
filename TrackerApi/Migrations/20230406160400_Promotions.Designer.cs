@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TrackerApi.Models;
 
@@ -10,9 +11,11 @@ using TrackerApi.Models;
 namespace TrackerApi.Migrations
 {
     [DbContext(typeof(TrackerApiContext))]
-    partial class TrackerApiContextModelSnapshot : ModelSnapshot
+    [Migration("20230406160400_Promotions")]
+    partial class Promotions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
