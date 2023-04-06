@@ -134,6 +134,10 @@ namespace TrackerApi.Controllers
                 _context.SaveChanges();
                 Promotion mostRecentPromotion = _context.Promotions.ToListAsync().Last();
             // }
+
+//             rocking baby to sleep
+            // i listening
+            // does  api build ok ?
             return CreatedAtAction("GetPromotion", new { id = mostRecentPromotion.PromotionId }, mostRecentPromotion);
         }
 
