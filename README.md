@@ -1,5 +1,5 @@
 
-# [portland local business api](https://github.com/johnedisc/portland_local_businesses_api)
+# [students tracker api](https://github.com/johnedisc/portland_local_businesses_api)
 ### Special Project #13 for [Epicodus](https://epicodus.com), 7 April 2023
 
 #### by [John Diggins](https://github.com/john-dig), [Mike Donovan](https://github.com/eggborne), [Chris Johnedis](https://github.com/johnedisc)
