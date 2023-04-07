@@ -8,6 +8,10 @@ _a martial arts gym student tracking api to be integrated with a gym client_
 
 ***
 
+a client app which uses this api can be found here: [https://github.com/eggborne/StudentsTrackerClient.Solution](https://github.com/eggborne/StudentsTrackerClient.Solution)
+
+***
+
 ### install tools
 
 first, make sure that you have the [dotnet sdk](https://dotnet.microsoft.com/en-us/download) and dotnet entity framework tool installed.
